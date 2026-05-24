@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="100%" height="100%">
+  <!-- Icon Group -->
+  <g transform="translate(10, 0)">
+    <!-- Grouped Sun elements for rotation micro-animation (K remains stationary outside this group) -->
+    <g class="sun-icon">
+      <!-- Vector Sun (No fill, stroke only) -->
+      <circle cx="25" cy="25" r="11" fill="none" stroke="currentColor" stroke-width="2" />
+      <!-- Sun Rays -->
+      <line x1="25" y1="4" x2="25" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="25" y1="42" x2="25" y2="46" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="4" y1="25" x2="8" y2="25" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="42" y1="25" x2="46" y2="25" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="10" y1="10" x2="13" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="37" y1="37" x2="40" y2="40" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="10" y1="40" x2="13" y2="37" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="37" y1="13" x2="40" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    <!-- Alphabetical K centered inside the sun circle -->
+    <text x="25" y="31.5" font-family="'Outfit', 'Inter', sans-serif" font-size="18" font-weight="900" text-anchor="middle" fill="currentColor">K</text>
+  </g>
+
+  <!-- Typography Brand text using tspan to prevent overlaps -->
+  <g transform="translate(70, 36)">
+    <text font-family="'Outfit', 'Inter', sans-serif" font-size="22" font-weight="800" fill="currentColor" letter-spacing="0.5">
+      Kumudini <tspan font-weight="400" fill="#FF9F43" letter-spacing="1">ENERGY</tspan>
+    </text>
+  </g>
+</svg>
