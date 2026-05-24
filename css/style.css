@@ -1231,22 +1231,40 @@ header {
 
 .contact-info-cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
+/* Bottom row: cards 4 & 5 centered under the 3-col grid */
+.contact-info-cards-grid > :nth-child(4),
 .contact-info-cards-grid > :nth-child(5) {
-  grid-column: span 2;
+  grid-column: auto;
+}
+
+/* When there are 5 items in a 3-col grid, the last 2 sit in cols 1-2.
+   Shift them to be centered by placing them in cols 1 and 2 of a conceptual center */
+.contact-info-cards-grid > :nth-child(4) {
+  grid-column: 1 / 2;
+  margin-left: auto;
+  margin-right: 0;
+  width: 100%;
+}
+.contact-info-cards-grid > :nth-child(5) {
+  grid-column: 2 / 3;
+  margin-left: 0;
+  margin-right: auto;
+  width: 100%;
 }
 
 .contact-info-card {
   position: relative;
-  padding: 2.2rem 2rem;
+  padding: 1.25rem 1.15rem;
   background-color: var(--bg-secondary);
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   overflow: hidden;
@@ -1260,8 +1278,8 @@ header {
 }
 
 .contact-info-icon {
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
   background-color: var(--primary-light);
   color: var(--primary);
@@ -1278,8 +1296,8 @@ header {
 }
 
 .contact-info-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -1288,15 +1306,15 @@ header {
 }
 
 .contact-info-content h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
   font-family: var(--font-heading);
 }
 
 .contact-info-content p {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.45;
   margin: 0;
 }
 
@@ -2220,6 +2238,18 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .contact-info-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-info-cards-grid > :nth-child(4),
+  .contact-info-cards-grid > :nth-child(5) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .contact-info-cards-grid > :nth-child(5) {
+    grid-column: span 2;
+  }
+
   .nav-menu {
     display: none; /* Mobile menu logic */
   }
@@ -2301,12 +2331,16 @@ footer {
   .contact-info-cards-grid {
     grid-template-columns: 1fr;
   }
+  .contact-info-cards-grid > :nth-child(4),
   .contact-info-cards-grid > :nth-child(5) {
     grid-column: span 1;
+    margin-left: 0;
+    margin-right: 0;
   }
   .contact-info-card {
-    padding: 1.5rem 1.25rem !important;
-    gap: 1.25rem !important;
+    flex-direction: row;
+    padding: 1.25rem 1.15rem !important;
+    gap: 1rem !important;
   }
   
   .hero-content h1 {
@@ -3011,7 +3045,7 @@ body, header, footer, section, .map-info-card, .product-card, .impact-card, .btn
 }
 
 .contact-info-card.handy-action-card:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-3px);
   border-color: var(--primary);
 }
 
