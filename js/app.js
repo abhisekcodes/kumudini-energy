@@ -690,7 +690,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 let methodText = 'phone call';
                 if (chosenMethod === 'whatsapp') methodText = 'WhatsApp message';
                 if (chosenMethod === 'email') methodText = 'email message';
-                successDesc.innerHTML = `Thank you for reaching out to Kumudini Energy, <strong>${name}</strong>. A technical representative from Keonjhar will contact you via <strong>${methodText}</strong> shortly.`;
+
+                // Safe static clear and DOM building to prevent XSS
+                successDesc.innerHTML = '';
+                successDesc.appendChild(document.createTextNode('Thank you for reaching out to Kumudini Energy, '));
+                const strongName = document.createElement('strong');
+                strongName.textContent = name;
+                successDesc.appendChild(strongName);
+                successDesc.appendChild(document.createTextNode('. A technical representative from Keonjhar will contact you via '));
+                const strongMethod = document.createElement('strong');
+                strongMethod.textContent = methodText;
+                successDesc.appendChild(strongMethod);
+                successDesc.appendChild(document.createTextNode(' shortly.'));
               }
 
               // Show success screen
