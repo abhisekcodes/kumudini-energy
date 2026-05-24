@@ -1,36 +1,112 @@
-# Kumudini Energy
+# ☀️ Kumudini Energy
 
-Kumudini Energy Private Limited is Keonjhar, Odisha's leading provider of clean energy, solar power plants, clean biomass cookstoves, and custom ecological electronics. This repository hosts the front-end website and built pipeline for the company.
+**Kumudini Energy Private Limited** — Keonjhar, Odisha's leading provider of renewable energy solutions, solar power plants, clean biomass cookstoves, and custom ecological electronics.
 
-## 🚀 Live Demo & Repository
-*   **GitHub Repository**: [abhisekcodes/kumudini-energy](https://github.com/abhisekcodes/kumudini-energy)
-*   **Location**: Keonjhar, Odisha, India
+> _Powering rural Odisha with clean, affordable energy since 2021._
+
+[![Deploy](https://img.shields.io/badge/Live_Site-GitHub_Pages-2ea44f?style=for-the-badge&logo=github)](https://abhisekcodes.github.io/kumudini-energy/)
+[![License](https://img.shields.io/badge/License-Proprietary-blue?style=for-the-badge)]()
+
+---
+
+## 🌐 Live Site
+
+🔗 **[abhisekcodes.github.io/kumudini-energy](https://abhisekcodes.github.io/kumudini-energy/)**
 
 ---
 
 ## ✨ Features
 
--   **Interactive Clean Energy Footprint Map**: Custom interactive Map powered by Leaflet.js showing local installations and clean energy statistics (Solar Capacity & Cookstoves distributed) across various districts of Odisha.
--   **Interactive Ecological Catalog**: Explore grid-tied solar plants, standalone off-grid systems, Prakti and Eco Chula biomass stoves, solar DC freezers, and custom LED drivers/PCBs with a modal-based technical specifications viewer.
--   **Impact Dashboard**: Real-time counter animations demonstrating households powered, clean energy generated (kWh), CO2 emissions saved (tons), and eco stoves distributed.
--   **Smart Contact Form**: Floating label input fields, preferred contact method selection (WhatsApp, Call, Email), and a cursor-tracking glassmorphic glow spotlight backdrop.
--   **Dark / Light / System Theme Mode**: High-efficiency theme manager with system setting auto-detection preventing un-themed screen flashes.
--   **Page Preloader**: Custom premium preloader showing logo and loading progress bar animations.
--   **Mobile Navigation Hamburger**: Fully responsive fluid navigation for mobile screens with scroll-locks.
+### 🗺️ Interactive Footprint Map
+- Custom Leaflet.js-powered map showing real installations across Odisha districts
+- Theme-aware CartoDB tile layers (light/dark) that switch with the site theme
+- Click-to-explore district cards with solar capacity & biomass stove statistics
+- Auto-fills the contact form with district-specific inquiry details
+
+### 🛒 Ecological Product Catalog
+- Grid-tied solar plants, standalone off-grid systems, Prakti & Eco Chula biomass stoves, solar DC freezers, LED drivers, and custom PCBs
+- Category filter tabs with smooth animated transitions
+- Modal-based technical specifications viewer with detailed product data
+
+### 📊 Impact Dashboard
+- Animated counter widgets: households powered, clean energy generated (kWh), CO₂ saved (tons), eco stoves distributed
+- Intersection Observer triggers counters only when scrolled into view
+
+### 📬 Smart Contact Form
+- Floating-label input fields with validation
+- Preferred contact method selector (WhatsApp, Call, Email)
+- Cursor-tracking glassmorphic glow spotlight on the form card
+- Floating parallax bubble particles responding to mouse movement
+- District-aware pre-fill from the footprint map
+
+### 🌗 Theme System
+- Three-mode toggle: Light → Dark → System → cycle
+- System auto-detection via `prefers-color-scheme`
+- Inline `<script>` flash prevention — theme is applied before first paint
+- Leaflet map tiles switch dynamically with theme
+
+### 📱 Fully Responsive Design
+- Mobile hamburger navigation with scroll-lock overlay (activates at 1024px)
+- 2-column contact info grid on desktop, single-column on mobile
+- Fluid typography, adaptive grids, and touch-friendly interactions
+- Comfortable on phones, tablets, small laptops, and desktops
+
+### 🎨 Premium UI/UX
+- Custom page preloader with logo animation and progress bar
+- Scroll-reveal animations (left, right, bottom) via Intersection Observer
+- Glassmorphism card effects, gradient borders, and micro-animations
+- SVG logo with sun-spin hover animation
+- Typed text effect on hero section headings
+
+### 👥 Team Section
+- Interactive team cards with tab switcher (Our Story, Vision, Team)
+- Photo gallery with hover overlays
+- Customer impact stories modal
 
 ---
 
 ## 🛠️ Technology Stack
 
--   **Core**: HTML5, Vanilla JavaScript, Vanilla CSS3 (Custom Variables/Design Tokens)
--   **Maps API**: Leaflet.js Map Library (uses theme-aware CartoDB tile layers)
--   **Build Tools**: Node.js, Clean-CSS (minifier), Terser (JS parser/compressor), HTML-Minifier-Terser
+| Layer | Technology |
+|---|---|
+| **Structure** | HTML5 (semantic, SEO-optimized, Schema.org JSON-LD) |
+| **Styling** | Vanilla CSS3 — custom properties, design tokens, glassmorphism |
+| **Logic** | Vanilla JavaScript (ES6+) — zero frameworks |
+| **Maps** | Leaflet.js with CartoDB tile layers |
+| **Fonts** | Google Fonts — Outfit, Plus Jakarta Sans |
+| **Build** | Node.js, Clean-CSS, Terser, HTML-Minifier-Terser |
+| **Deploy** | GitHub Pages via `gh-pages` |
 
 ---
 
-## ⚙️ Development & Scripts
+## 📁 Project Structure
 
-To run the site locally or compile the production assets, follow these steps:
+```
+kumudini-energy/
+├── index.html            # Main single-page application
+├── css/
+│   └── style.css         # Complete stylesheet (~3000 lines)
+├── js/
+│   └── app.js            # All interactive logic (~1100 lines)
+├── assets/               # Images, SVGs, team photos, product images
+│   ├── logo.svg
+│   ├── solar_hero.png
+│   ├── grid_solar.png
+│   ├── eco_chula.png
+│   ├── team_*.png
+│   └── ...               # 20 assets total
+├── build.js              # Production build script
+├── dist/                 # Compiled production output (auto-generated)
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Development
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+)
 
 ### Install Dependencies
 ```bash
@@ -38,19 +114,57 @@ npm install
 ```
 
 ### Start Development Server
-Launches a local HTTP server on port 8080.
+Launches a local HTTP server on port 8080 with cache disabled.
 ```bash
 npm start
 ```
+Then open [http://localhost:8080](http://localhost:8080) in your browser.
 
-### Compile Production Build
-Minifies CSS, JS, and HTML, copies assets, updates production asset paths, and outputs the optimized bundle into `./dist/`.
+### Build for Production
+Minifies CSS, JS, and HTML, copies assets, and outputs the optimized bundle into `./dist/`.
 ```bash
 npm run build
 ```
 
 ### Serve Production Build
-Runs a local server pointing directly to the compiled production directory.
+Runs a local server pointing to the compiled `./dist/` directory.
 ```bash
 npm run serve:prod
 ```
+
+### Deploy to GitHub Pages
+Builds and publishes the `./dist/` folder to the `gh-pages` branch.
+```bash
+npm run build
+npm run deploy
+```
+
+---
+
+## 🌍 SEO & Accessibility
+
+- Schema.org JSON-LD structured data for organization
+- Open Graph and Twitter Card meta tags for social sharing
+- Semantic HTML5 elements with proper heading hierarchy
+- Descriptive `alt` text and ARIA-friendly interactive elements
+- Optimized meta titles and descriptions
+
+---
+
+## 📞 Contact
+
+- **Registered Office**: Bhatta Sahi, Old Town, Keonjhar, Odisha — 758001
+- **Phone / WhatsApp**: +91 94372 58140
+- **Email**: info@kumudinienergy.com
+
+---
+
+## 📄 License
+
+This project is proprietary software of **Kumudini Energy Private Limited**. All rights reserved.
+
+---
+
+<p align="center">
+  <em>Built with ☀️ clean energy and 💚 for rural Odisha</em>
+</p>
