@@ -1,0 +1,16 @@
+{
+  "name": "kumudini-energy",
+  "version": "1.0.0",
+  "description": "Production build pipeline for Kumudini Energy website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server ./ -p 8080 -c-1",
+    "serve:prod": "npx http-server ./dist -p 8080 -c-1",
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.31.0"
+  }
+}
